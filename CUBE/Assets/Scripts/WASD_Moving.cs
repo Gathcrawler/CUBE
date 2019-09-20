@@ -29,6 +29,5 @@ public class WASD_Moving : MonoBehaviour
 			transform.Translate(-transform.forward * Time.deltaTime * Speed);
 		}
 
-
 	}
 }
