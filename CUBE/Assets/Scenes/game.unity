@@ -123,8 +123,9 @@ GameObject:
   - component: {fileID: 194534334}
   - component: {fileID: 194534333}
   - component: {fileID: 194534332}
+  - component: {fileID: 194534335}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: CubesManage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -157,7 +158,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1680576038273810, guid: 40988ca623c7b6246a3c1a4bfcbd11df, type: 3}
-  script: {fileID: 194534332}
+  cubesMover: {fileID: 194534332}
+  cubesSelecter: {fileID: 194534335}
   numberOfObjects: 5
   radius: 5
   selectable: 1
@@ -176,6 +178,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &194534335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194534331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af0172c4e042e974a82980de1340f5d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedmaterial: {fileID: 2100000, guid: 34ffa24f7461cd14a901e7da42f59f1b, type: 2}
+  unselectedmaterial: {fileID: 2100000, guid: e26fe6e06900b56419685fc18f1d137b, type: 2}
+  SelectedCubes: []
 --- !u!1 &371071850
 GameObject:
   m_ObjectHideFlags: 0

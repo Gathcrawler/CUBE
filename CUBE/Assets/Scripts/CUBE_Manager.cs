@@ -5,10 +5,10 @@ using UnityEngine;
 public class CUBE_Manager : MonoBehaviour
 {
 	public GameObject prefab;
-	public CubesMover script;
+	public CubesMover cubesMover;
+	public CubesSelecter cubesSelecter;
 	public int numberOfObjects = 5;
 	public float radius = 5f;
-	
 	public bool selectable = false;
 	public List<GameObject> cubes;
 	
@@ -23,14 +23,12 @@ public class CUBE_Manager : MonoBehaviour
 			child.transform.SetParent(transform);
 			cubes.Add(child);
     	}
-		CubesMover wasd = gameObject.GetComponent<CubesMover>();
-		wasd.Start();
+		
+		cubesMover.Initialisation(new List<GameObject>());
+		cubesSelecter.Initialisation(new List<GameObject>());
 	}
-
-
-
 	
-	/*void Update ()
+	void Update ()
     {
      	if (Input.GetMouseButtonDown(0))
      	{
@@ -38,8 +36,16 @@ public class CUBE_Manager : MonoBehaviour
 			RaycastHit hit;
 			if (Physics.Raycast(ray, out hit, Mathf.Infinity))
 			{
-				CubesMover wasd = gameObject.AddComponent<CubesMover>();
+				List<GameObject> allcubes = new List<GameObject>();
+				allcubes.Add(hit.collider.gameObject);
+				cubesMover.Select(allcubes);
+				cubesSelecter.Select(allcubes);
+			}
+			else
+			{
+				cubesMover.Select(new List<GameObject>());
+				cubesSelecter.Select(new List<GameObject>());
 			}
      	}
-    } */   			
+    }   			
 }
